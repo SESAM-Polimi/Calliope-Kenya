@@ -1,0 +1,152 @@
+
+# Location Definition #
+
+# In this model, kenya is divided into 4 different regions which are:
+
+        #1. Nayrobi Region: NBOR
+        #2. Coast Region: CSTR 
+        #3. Western Region: WSTR
+        #4. Mont Kenya Region: MTKR
+
+# Parameters:
+
+    # lat: Latitude of the location
+    # lon: Longtitude of the location 
+    # energy_cap_equals: Real Capacity [kW]
+
+# Defining the locations 
+
+locations:
+
+################################### NBRO ##################################                                                   
+    NBOR:
+        coordinates:
+            lat: -1.2833            
+            lon: 36.8172            
+        
+        # Available Technologies
+        techs:
+            L_hydro_pp:
+                constraints:
+                    energy_cap_equals: 130000 
+                    resource: file=Hydro_Large.csv:NBOR  
+                      
+            GT_pp:
+                constraints:
+                    energy_cap_equals: 60000     
+            HFO_pp:
+                constraints:
+                    energy_cap_equals: 359000   
+                     
+            on_wind_pp:
+                constraints:
+                    energy_cap_equals: 25000 
+                    resource: file=Wind.csv:NBOR               
+                    resource_unit: energy_per_cap          # Resource Unit: [kW/kW]    
+                          
+            demand_power:
+                constraints:
+                    resource: file=Demand.csv:NBOR 
+                    
+################################### CSTR ##################################                                                 
+    CSTR:
+    
+        coordinates:
+            lat: -1.910164          
+            lon: 40.588417          
+ 
+        # Available Technologies   
+        techs:
+            HFO_pp:
+                constraints:
+                    energy_cap_equals: 345000    
+
+            demand_power:
+                constraints:
+                    resource: file=Demand.csv:CSTR 
+                    
+################################### WSTR ##################################                                                                                                   
+    WSTR:
+    
+        coordinates:
+            lat: 1.91667           
+            lon: 35.3333            
+         
+        # Available Technologies              
+        techs:
+            L_hydro_pp:
+                constraints:
+                    energy_cap_equals: 470500 
+                    resource: file=Hydro_Large.csv:WSTR 
+                      
+            S_hydro_pp:
+                constraints:
+                    energy_cap_equals: 2170
+                    resource: file=Hydro_Small.csv:WSTR      
+            geo_pp:
+                constraints:
+                    energy_cap_equals: 624000    
+            bio_pp:
+                constraints:
+                    energy_cap_equals: 36000     
+
+            demand_power:
+                constraints:
+                    resource: file=Demand.csv:WSTR 
+                    
+################################### MTKR ##################################                                                                                                                                                      
+    MTKR:
+ 
+        coordinates:
+            lat: 0.07100            
+            lon: 37.6900            
+
+        # Available Technologies              
+        techs:
+            L_hydro_pp:
+                constraints:
+                    energy_cap_equals: 185000 
+                    resource: file=Hydro_Large.csv:MTKR 
+                    
+            S_hydro_pp:
+                constraints:
+                    energy_cap_equals: 8900 
+                    resource: file=Hydro_Small.csv:MTKR    
+
+            demand_power:
+                constraints:
+                    resource: file=Demand.csv:MTKR 
+
+################################### UGA ##################################                                                                                                                                                      
+# As the transmission line is between Tororo and Western Region of Kenya, We considered the location of Tororo for UGA:
+# There is a simultaneous export and import of electricity between Kenya and Uganda.
+
+                                                  
+    UGA_prod:
+    
+        coordinates:
+            lat: 0.674313           
+            lon: 34.186793         
+         
+        # Available Technologies              
+        techs:
+            Imp_UGA:
+                constraints:
+                    resource: file=Imports.csv:UGA          # Timeseries file contains the real energy imported year 2015 Source: Field Campaign
+                    resource_unit: energy
+                    force_resource: true
+
+    UGA_cons:
+    
+        coordinates:
+            lat: 0.674313          
+            lon: 34.186793          
+
+        techs:            
+            demand_power:
+                constraints:
+                    resource: file=Demand.csv:UGA               
+
+
+
+                    

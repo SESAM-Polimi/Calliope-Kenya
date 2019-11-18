@@ -1,0 +1,175 @@
+
+# Transmission Grid and the connections Definition #
+
+# Parameters and Units:
+
+    # energy_cap_equals:  Capacity of Grid          [kW]
+    # distance:           Distance Between 2 Nodes  [hundreds of km]   
+
+techs:
+
+############################### Local Transmission Grid ###############################
+# Connects Every Region to Itself
+    free_transmission:
+        essentials:
+            name: 'Local power transmission'
+            color: '#FF1493'
+            parent: transmission
+            carrier: power
+        constraints:
+            energy_cap_max: inf
+            energy_eff: 1.0                       
+
+############################### High Voltage(132) Grid ############################### 
+    hvdc_132:
+        essentials:
+            name: 'High Voltage Grid_132'
+            parent: transmission
+            carrier: power
+            color: '#00BFFF'
+        constraints:
+            energy_eff_per_distance: 0.995
+        costs:
+            monetary:
+                om_prod: 0.00013156
+                
+############################### High Voltage(220) Grid ############################### 
+    hvdc_220:
+        essentials:
+            name: 'High Voltage Grid_220'
+            parent: transmission
+            carrier: power
+            color: '#4169E1'
+        constraints:
+            energy_eff_per_distance: 0.995
+        costs:
+            monetary:
+                om_prod: 0.000120348
+
+############################### High Voltage(UGA) Grid ############################### 
+    hvdc_import:
+        essentials:
+            name: 'Imports and Exports with UGA'
+            parent: transmission
+            carrier: power
+            color: '#00FF00'
+        constraints:
+            energy_eff_per_distance: 0.995
+        costs:
+            monetary:
+                om_prod: 0.002
+              
+                
+links:                             
+# Free Transmission               
+                
+    WSTR,WSTR:
+        techs:
+            free_transmission:
+                constraints:   
+                    energy_cap_equals: 2011355                  
+                distance: 7.5151                          
+                
+    CSTR,CSTR:
+        techs:
+            free_transmission:
+                constraints:
+                    energy_cap_equals: 1225475
+                distance: 5.475                               
+                
+    NBOR,NBOR:
+        techs:
+            free_transmission:
+                constraints:
+                    energy_cap_equals: 3987527
+                distance: 9.2731             
+                
+    MTKR,MTKR:
+        techs:
+            free_transmission:
+                constraints:
+                    energy_cap_equals: 571565
+                distance: 2.36                               
+                
+                
+# Connection of Nodes
+# As the country is divided into 4 regions, the distance and capacity between two nodes could be different in different directions
+# due to the fact that there are different counties are located in every region and not all of them are connected
+# As a result, an average capacity and distance is considered for the connection of every two nodes.
+                
+    WSTR,MTKR:
+        techs:
+            hvdc_132:
+                constraints:
+                    energy_cap_equals: 130525.5                 
+                distance: 0.825                                 
+                             
+
+    WSTR,NBOR:
+        techs:
+            hvdc_132:
+                constraints:
+                    energy_cap_equals: 267922 
+                distance: 0.852                  
+                
+            hvdc_220:
+                constraints:
+                    energy_cap_equals: 654257
+                distance: 0.66                   
+
+
+
+
+    CSTR,NBOR:
+        techs:
+            hvdc_132:
+                constraints:
+                    energy_cap_equals: 116777.5
+                distance: 0.535              
+                
+           
+
+    CSTR,MTKR:
+        techs:
+            hvdc_132:
+                constraints:
+                    energy_cap_equals: 79918
+                distance: 0.17                
+            hvdc_220:
+                constraints:
+                    energy_cap_equals: 292275.5
+                distance: 3.28                             
+                
+
+    NBOR,MTKR:
+        techs:
+            hvdc_132:
+                constraints:
+                    energy_cap_equals: 154778.5
+                distance: 0.91               
+                
+            hvdc_220:
+                constraints:
+                    energy_cap_equals: 230151
+                distance: 1.39955               
+
+
+
+# Imports and Exports      
+          
+    UGA_cons,WSTR:
+        techs:
+            hvdc_import:
+                constraints:
+                    energy_cap_equals: 118527.0
+                distance: 0.74              
+
+    UGA_prod,WSTR:
+        techs:
+            hvdc_import:
+                constraints:
+                    energy_cap_equals: 118527.0
+                distance: 0.74              
+
+
+ 
