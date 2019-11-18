@@ -1,0 +1,62 @@
+''' 
+2019-11-18
+Model of the Kenyan Energy System in 2015, based on field campaign data and Updated Least Cost Power Development Plan 2017-2035 Report
+Developed by Mohammad Amin Tahavori and Nicolò Stevanato
+Politecnico di Milano - Department of Energy
+
+'''
+
+
+
+# Model configuration: all settings that affect the built model
+
+########################################################################
+#                              IMPORTS                                 #
+# All the files that define the model configuration should be imported #
+########################################################################
+
+import: 
+    
+    - 'Model_config/Location_Constraints.yaml'
+    - 'Model_config/Transmission_links.yaml'
+    - 'Model_config/Technologies.yaml'
+
+########################################################################
+#                                MODEL                                 #
+#                      General settings of the model                   #
+########################################################################
+
+model:
+
+    name: 'Kenya 4 Nodes Model (2015)'           # Defining the name of the model
+    calliope_version: 0.6.4                      # What version of Calliope this model is intended for
+    timeseries_data_path: 'Time_series_data'     # Time series data path
+    subset_time: ['2015-06-01', '2015-06-02']    # shows the a subset of time to represent the results
+
+########################################################################
+#                                RUN                                   #
+#          All settings that affect how the built model is run         #
+########################################################################
+
+run:
+
+    operation:
+        horizon: 48
+        window: 24
+                
+        ####################################
+        #        Defining the solver       #
+        #         glpk: free solver        #             
+        ####################################
+        
+    solver: glpk        
+    ensure_feasibility: false    # Switches on the "unmet demand" constraint        
+    bigM: 1e6                    # Sets the scale of unmet demand, which cannot be too high, otherwise the optimisation will not converge
+    zero_threshold: 1e-20        # Any value coming out of the backend that is smaller than this (due to floating point errors, probably) will be set to zero        
+        
+        
+        
+        
+        
+        
+        
