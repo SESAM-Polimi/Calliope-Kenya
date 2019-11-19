@@ -10,6 +10,7 @@
     # energy_cap:    Capital investment of the technology  [$/kW]
     # om_annual:     Fixed annual O&M cost                 [$/kW]
     # om_prod:       Variable cost of production           [$/kWh]
+    # om_con:        Variable cost of fuel                 [$/kWh]
     # interest_rate: Interest rate                         [-]
    
 # Reference: Updated Least Cost Power Development Plan 2017-2035 Report
