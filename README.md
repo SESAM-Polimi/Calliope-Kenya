@@ -15,3 +15,5 @@ This model has been tested with Calliope 0.6.3 and Calliope 0.6.4
 ![alt text](https://github.com/SESAM-Polimi/Calliope-Kenya/blob/master/Kenya_Regions.png)
 
 ## License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-sa/4.0/)
