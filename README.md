@@ -1,6 +1,6 @@
 # Calliope-Kenya
 
-Model of the Kenyan Energy System based on 2015 Field Collected Data
+Calliope model of the Kenyan Energy System based on 2015 Field Collected Data
 
 ## Installation
 
@@ -13,3 +13,5 @@ This model has been tested with Calliope 0.6.3 and Calliope 0.6.4
 ## Regions
 
 ![alt text](https://github.com/SESAM-Polimi/Calliope-Kenya/blob/master/Kenya_Regions.png)
+
+## License
