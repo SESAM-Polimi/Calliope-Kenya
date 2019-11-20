@@ -8,7 +8,8 @@ To install, it is recommended to follow the [instructions for installing Calliop
 
 ## Calliope Version
 
-This model has been tested with Calliope 0.6.3 and Calliope 0.6.4
+This model has been built and tested with Calliope 0.6.4
+It gives compatibility issues with previous versions
 
 ## Regions
 
