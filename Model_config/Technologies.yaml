@@ -11,6 +11,7 @@
     # om_annual:     Fixed annual O&M cost                 [$/kW]
     # om_prod:       Variable cost of production           [$/kWh]
     # om_con:        Variable cost of fuel                 [$/kWh]
+    # energy_cap:    Investment Cost of Technology         [$/kW]
     # interest_rate: Interest rate                         [-]
    
 # Reference: Updated Least Cost Power Development Plan 2017-2035 Report
@@ -31,8 +32,9 @@ techs:
             energy_eff: 1.00                       # Timeseries file contains the real energy output year 2015 Source: Field Campaign                                       
                                      
         costs:
-            monetary:            
-                om_annual: 27.4                    
+            monetary:    
+                energy_cap: 3850.48 
+                om_annual: 27.4
                 om_prod: 0.0005                  
                 interest_rate: 0.10                   
                 
@@ -49,7 +51,8 @@ techs:
             energy_eff: 1.00                       # Timeseries file contains the real energy output year 2015 Source: Field Campaign 
                                                  
         costs:
-            monetary:              
+            monetary:  
+                energy_cap: 3850.48 
                 om_annual: 27.0                    
                 om_prod: 0                         
                 interest_rate: 0.10               
@@ -68,7 +71,8 @@ techs:
             resource: inf                                                    
            
         costs:
-            monetary:              
+            monetary:   
+                energy_cap: 3776.4    
                 om_annual: 136.244                                      
                 interest_rate: 0.10               
   
@@ -86,7 +90,8 @@ techs:
             resource: inf                                                    
             
         costs:
-            monetary:              
+            monetary:   
+                energy_cap: 1032.2
                 om_annual: 20.9                    
                 om_prod: 0.0125                    
                 om_con: 0.061128                   
@@ -106,7 +111,8 @@ techs:
             resource: inf                                                  
          
         costs:
-            monetary:             
+            monetary:  
+                energy_cap: 1993.9 
                 om_annual: 31.5                    
                 om_prod: 0.0088                  
                 om_con: 0.032328                   
@@ -125,7 +131,8 @@ techs:
             energy_eff: 1                          # Already Considered in time series data
                                
         costs:
-            monetary:              
+            monetary:  
+                energy_cap: 2030.0
                 om_annual: 76.1                    
                 interest_rate: 0.10               
 
@@ -143,7 +150,8 @@ techs:
             resource: inf                                                 
         
         costs:
-            monetary:               
+            monetary:  
+                energy_cap: 3045.0
                 om_annual: 152.3                  
                 om_prod: 0.0086                    
                 om_con: 0.0                      
