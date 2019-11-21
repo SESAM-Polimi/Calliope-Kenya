@@ -12,6 +12,7 @@
     # om_prod:       Variable cost of production           [$/kWh]
     # om_con:        Variable cost of fuel                 [$/kWh]
     # energy_cap:    Investment Cost of Technology         [$/kW]
+    # lifetime:      Life time of the Technology           [years]
     # interest_rate: Interest rate                         [-]
    
 # Reference: Updated Least Cost Power Development Plan 2017-2035 Report
@@ -29,7 +30,8 @@ techs:
             carrier_out: power                     
                    
         constraints:
-            energy_eff: 1.00                       # Timeseries file contains the real energy output year 2015 Source: Field Campaign                                       
+            energy_eff: 1.00                       # Timeseries file contains the real energy output year 2015 Source: Field Campaign 
+            lifetime: 50                                  
                                      
         costs:
             monetary:    
@@ -49,6 +51,7 @@ techs:
                 
         constraints:
             energy_eff: 1.00                       # Timeseries file contains the real energy output year 2015 Source: Field Campaign 
+            lifetime: 30                                  
                                                  
         costs:
             monetary:  
@@ -69,6 +72,7 @@ techs:
         constraints:
             energy_eff: 0.35                       
             resource: inf                                                    
+            lifetime: 40                                  
            
         costs:
             monetary:   
@@ -88,7 +92,8 @@ techs:
         constraints:
             energy_eff: 0.32                       
             resource: inf                                                    
-            
+            lifetime: 30                                  
+           
         costs:
             monetary:   
                 energy_cap: 1032.2
@@ -109,6 +114,7 @@ techs:
         constraints:
             energy_eff: 0.313                    
             resource: inf                                                  
+            lifetime: 30                                  
          
         costs:
             monetary:  
@@ -128,7 +134,8 @@ techs:
             carrier_out: power                     
                
         constraints:
-            energy_eff: 1                          # Already Considered in time series data
+            energy_eff: 1                          # Already Considered in timeseries data
+            lifetime: 20                                  
                                
         costs:
             monetary:  
@@ -148,6 +155,7 @@ techs:
         constraints:
             energy_eff: 0.25                       
             resource: inf                                                 
+            lifetime: 30                                  
         
         costs:
             monetary:  
