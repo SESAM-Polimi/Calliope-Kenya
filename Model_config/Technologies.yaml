@@ -143,7 +143,7 @@ techs:
                 om_annual: 76.1                    
                 interest_rate: 0.10               
 
-############################## Biomass Wind Power Plant ##############################  
+############################## Biomass Power Plant ##############################  
     bio_pp:
     
         essentials:
