@@ -122,30 +122,30 @@ locations:
 # There is a simultaneous export and import of electricity between Kenya and Uganda.
 
                                                   
-    UGA_prod:
-    
-        coordinates:
-            lat: 0.674313           
-            lon: 34.186793         
-         
-        # Available Technologies              
-        techs:
-            Imp_UGA:
-                constraints:
-                    resource: file=Imports.csv:UGA          # Timeseries file contains the real energy imported year 2015 Source: Field Campaign
-                    resource_unit: energy
-                    force_resource: true
-
-    UGA_cons:
-    
-        coordinates:
-            lat: 0.674313          
-            lon: 34.186793          
-
-        techs:            
-            demand_power:
-                constraints:
-                    resource: file=Demand.csv:UGA               
+#    UGA_prod:
+#    
+#        coordinates:
+#            lat: 0.674313           
+#            lon: 34.186793         
+#         
+#        # Available Technologies              
+#        techs:
+#            Imp_UGA:
+#                constraints:
+#                    resource: file=Imports.csv:UGA          # Timeseries file contains the real energy imported year 2015 Source: Field Campaign
+#                    resource_unit: energy
+#                    force_resource: true
+#
+#    UGA_cons:
+#    
+#        coordinates:
+#            lat: 0.674313          
+#            lon: 34.186793          
+#
+#        techs:            
+#            demand_power:
+#                constraints:
+#                    resource: file=Demand.csv:UGA               
 
 
 
