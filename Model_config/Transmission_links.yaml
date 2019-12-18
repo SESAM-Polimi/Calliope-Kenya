@@ -157,19 +157,19 @@ links:
 
 # Imports and Exports      
           
-    UGA_cons,WSTR:
-        techs:
-            hvdc_import:
-                constraints:
-                    energy_cap_equals: 118527.0
-                distance: 0.74              
-
-    UGA_prod,WSTR:
-        techs:
-            hvdc_import:
-                constraints:
-                    energy_cap_equals: 118527.0
-                distance: 0.74              
+#    UGA_cons,WSTR:
+#        techs:
+#            hvdc_import:
+#                constraints:
+#                    energy_cap_equals: 118527.0
+#                distance: 0.74              
+#
+#    UGA_prod,WSTR:
+#        techs:
+#            hvdc_import:
+#                constraints:
+#                    energy_cap_equals: 118527.0
+#                distance: 0.74              
 
 
  
