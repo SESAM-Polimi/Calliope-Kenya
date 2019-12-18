@@ -179,18 +179,18 @@ techs:
 # Power Import Technologies #
             
 ################################ Imports from Uganda ################################            
-    Imp_UGA:
-    
-        essentials:
-            color: '#F40F0F'
-            name: 'Import from Uganda'
-            parent: supply
-            carrier_out: power                     
-
-        # now it is forced to import the measured data, still looking for a price in order to optimize 
-        costs:
-            monetary:
-                om_prod: 0.00                      
+#    Imp_UGA:
+#    
+#        essentials:
+#            color: '#F40F0F'
+#            name: 'Import from Uganda'
+#            parent: supply
+#            carrier_out: power                     
+#
+#        # now it is forced to import the measured data, still looking for a price in order to optimize 
+#        costs:
+#            monetary:
+#                om_prod: 0.00                      
 
                 
 
